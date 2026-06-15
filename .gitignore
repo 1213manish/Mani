@@ -1,0 +1,43 @@
+# Dependency directories
+node_modules/
+backend/.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local configuration
+.env
+backend/.env
+frontend/.env
+*.local
+
+# Database
+backend/db.sqlite3
+*.sqlite3
+
+# Build/Dist
+frontend/dist/
+dist/
+dist-ssr
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Media
+backend/media/
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
