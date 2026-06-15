@@ -2,15 +2,16 @@
 
 > Production-ready expense sharing with explainable balances, anomaly-detected imports, and a complete audit trail.
 
-## Tech Stack
+## Tech Stack & AI Used
 
 | Layer | Technology |
 |---|---|
+| **AI Assistants** | **Gemini 3 Flash (Preview)** via GitHub Copilot (Code generation, Architecture, Debugging) |
 | Backend | Django 5, Django REST Framework, PostgreSQL |
 | Auth | JWT (SimpleJWT) with Refresh Token Rotation |
 | Frontend | React 18, TypeScript, Vite, TailwindCSS v3 |
 | State | Zustand (auth), React Query (server state) |
-| Deployment | Railway (backend), Vercel (frontend), Neon (PostgreSQL) |
+| Deployment | Vercel (Frontend & Backend) |
 
 ---
 
