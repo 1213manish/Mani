@@ -43,10 +43,10 @@ export default function LandingPage() {
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-slate-500 tracking-wide">
+          <a href="#home" className="hover:text-slate-900 transition-colors">Home</a>
           <a href="#about" className="hover:text-slate-900 transition-colors">About</a>
-          <a href="#metrics" className="hover:text-slate-900 transition-colors">Metrics</a>
           <a href="#features" className="hover:text-slate-900 transition-colors">Features</a>
-          <a href="#testimonials" className="hover:text-slate-900 transition-colors">Testimonial</a>
+          <a href="#service" className="hover:text-slate-900 transition-colors">Service</a>
           <a href="#blog" className="hover:text-slate-900 transition-colors">Blog</a>
           <a href="#contact" className="hover:text-slate-900 transition-colors">Contact</a>
         </nav>
@@ -55,9 +55,9 @@ export default function LandingPage() {
           {isAuthenticated ? (
             <button
               onClick={() => navigate('/dashboard')}
-              className="bg-[#8b5cf6] text-white rounded-full px-5 py-2.5 text-xs font-bold hover:bg-[#7c3aed] transition shadow-md shadow-purple-500/10"
+              className="bg-[#8b5cf6] text-white rounded-lg px-5 py-2.5 text-xs font-bold hover:bg-[#7c3aed] transition shadow-md shadow-purple-500/10"
             >
-              Go to Dashboard
+              Get App
             </button>
           ) : (
             <div className="flex items-center gap-2">
@@ -69,9 +69,9 @@ export default function LandingPage() {
               </button>
               <button
                 onClick={() => navigate('/register')}
-                className="bg-[#8b5cf6] text-white rounded-full px-4 py-2 text-xs font-bold hover:bg-[#7c3aed] transition shadow-md shadow-purple-500/10"
+                className="bg-[#8b5cf6] text-white rounded-lg px-6 py-2.5 text-xs font-bold hover:bg-[#7c3aed] transition shadow-md shadow-purple-500/10"
               >
-                Sign Up
+                Get App
               </button>
             </div>
           )}
@@ -82,38 +82,39 @@ export default function LandingPage() {
       <section className="relative max-w-7xl mx-auto px-6 pt-12 pb-16 z-10 flex flex-col items-center text-center">
 
         {/* Giant Title "Simplified" */}
-        <h1 className="text-[150px] sm:text-[120px] font-black tracking-tighter text-[#1e1b4b] leading-[0.95] mb-2 select-none">
+        <h1 className="text-[100px] sm:text-[140px] font-black tracking-tighter text-[#1e1b4b] leading-[0.9] mb-2 select-none">
           Simplified
         </h1>
 
         {/* Slanted Pill "Download App" */}
-        <div className="bg-slate-950 text-white text-sm font-bold uppercase tracking-widest px-6 py-2.5 rounded-xl shadow-md -rotate-3 hover:rotate-0 transition-transform duration-300 mb-8 inline-block select-none cursor-pointer" onClick={() => navigate('/register')}>
+        <div className="bg-slate-950 text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl shadow-xl -rotate-2 hover:rotate-0 transition-all duration-500 mb-12 inline-block select-none cursor-pointer hover:scale-110" onClick={() => navigate('/register')}>
           Download App
         </div>
 
         {/* Hero Central Graphic & Floating Side Text */}
-        <div className="relative w-full max-w-5xl h-[480px] sm:h-[580px] flex items-center justify-center mt-2">
+        <div className="relative w-full max-w-6xl h-[500px] sm:h-[650px] flex items-center justify-center mt-2">
 
           {/* Floating Text Left */}
-          <div className="hidden lg:block absolute left-[4%] top-[25%] max-w-[220px] text-left">
-            <p className="text-xs text-slate-500 leading-relaxed font-medium">
-              The easiest way to track expenses, manage bills, and settle debts with friends, family, and colleagues.
+          <div className="hidden lg:block absolute left-[2%] top-[10%] max-w-[240px] text-left">
+            <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
+              This streamlined approach provides an immediate, high-level view of your spending patterns, allowing you to identify trends and adjust your habits in real time.
             </p>
           </div>
 
-          {/* Central generated smartphone mockup illustration */}
-          <div className="relative z-10 w-[270px] sm:w-[320px] aspect-[1/2] select-none pointer-events-none transform hover:scale-[1.01] transition-transform duration-500">
+          {/* Central smartphone mockup illustration */}
+          <div className="relative z-10 w-[300px] sm:w-[420px] aspect-[1/2] select-none transform hover:scale-[1.02] transition-transform duration-700 cursor-default">
+            {/* Using the existing phone mockup but we'll try to position it like the hand-held phone */}
             <img
               src="/simplified_hero_phone.png"
               alt="Simplified Phone Application"
-              className="w-full h-full object-contain drop-shadow-[0_25px_45px_rgba(139,92,246,0.25)]"
+              className="w-full h-full object-contain drop-shadow-[0_45px_65px_rgba(139,92,246,0.3)]"
             />
           </div>
 
           {/* Floating Text Right */}
-          <div className="hidden lg:block absolute right-[4%] top-[25%] max-w-[220px] text-left">
-            <p className="text-xs text-slate-500 leading-relaxed font-medium">
-              Create groups, split expenses, choose division methods, and enjoy transparent math with explainable balances.
+          <div className="hidden lg:block absolute right-[2%] top-[10%] max-w-[240px] text-right">
+            <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
+              You gain the total focus needed to prioritize your long term financial goals and make informed decisions with absolute confidence.
             </p>
           </div>
 
@@ -122,25 +123,39 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Metrics Section (Stress-Free Expense Management) ─── */}
-      <section id="metrics" className="bg-[#fcfdff] border-y border-slate-100 py-24 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section id="metrics" className="bg-[#fcfdff] border-y border-slate-100 py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           {/* Left info panel */}
-          <div className="lg:col-span-5 text-left flex flex-col justify-center h-full">
-            <p className="text-xs font-bold text-[#8b5cf6] mb-3 uppercase tracking-wider">Metrics Overview</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e1b4b] tracking-tight leading-tight mb-4">
-              Stress-Free Expense<br />Management.
-            </h2>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Over 380,000 transactions tracked across different countries and currencies, giving users a reliable dashboard of expense accounts.
-            </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
+          <div className="lg:col-span-12 text-center flex flex-col items-center mb-12">
+            <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-end mb-16 text-left">
+              <div className="max-w-xl">
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-[#100e34] tracking-tight leading-tight mb-8">
+                  Stress-Free Expense<br />Management
+                </h2>
+                <div className="mt-4">
+                  <button className="bg-[#8b5cf6] text-white rounded-lg px-8 py-3 text-xs font-bold hover:bg-[#7c3aed] transition shadow-lg shadow-purple-500/20">
+                    Know More
+                  </button>
+                </div>
+              </div>
+              
+              <div className="max-w-xs mt-12 md:mt-0">
+                <p className="text-slate-500 text-[14px] leading-relaxed font-medium">
+                  Over 380,000 transactions tracked across different countries and currencies, giving users a reliable dashboard of expense accounts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 hidden lg:block text-left">
+             <p className="text-slate-500 text-[14px] leading-relaxed max-w-xs font-medium">
               Manage your daily expenses with ease and confidence. With everything organized in one place, you keep absolute control.
             </p>
           </div>
 
           {/* Right vertical stats bars panel */}
-          <div className="lg:col-span-7 flex justify-end gap-5 sm:gap-8 h-[360px] sm:h-[400px] items-end pt-8">
+          <div className="lg:col-span-7 flex justify-end gap-5 sm:gap-10 h-[400px] sm:h-[480px] items-end">
 
             {/* Stat Bar 1: Global Transactions */}
             <div className="flex flex-col items-center flex-1 h-full justify-end group">
@@ -491,100 +506,116 @@ export default function LandingPage() {
       </section>
 
       {/* ─── Call to Action (Start Managing Your Home Expenses Today) ─── */}
-      <section className="bg-[#1e1b4b] text-white py-24 text-center relative overflow-hidden">
-        {/* Glow spotlight background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[70%] rounded-full bg-purple-500/15 blur-[120px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-xl mx-auto px-6 space-y-6">
-          <h2 className="text-6xl sm:text-5xl font-extrabold text-white">
+      <section className="bg-white py-32 text-center relative overflow-hidden">
+        <div className="relative z-10 max-w-2xl mx-auto px-6 space-y-8">
+          <h2 className="text-5xl sm:text-6xl font-extrabold text-[#100e34] tracking-tight leading-tight">
             Start Managing Your<br />Home Expenses Today
           </h2>
-          <p className="text-slate-300 text-xs leading-relaxed max-w-sm mx-auto font-medium">
-            Log shared splits, check CSV statements for anomalies, and enjoy explainable balance structures automatically.
+          <p className="text-slate-500 text-sm leading-relaxed max-w-lg mx-auto font-medium">
+            Take the first step toward financial clarity and control. No complicated setup just smarter living.
           </p>
-          <div className="flex justify-center items-center gap-4 pt-4">
+          <div className="flex justify-center items-center gap-4 pt-6">
             <button
               onClick={() => navigate('/register')}
-              className="bg-[#8b5cf6] text-white rounded-full px-6 py-3 text-xs font-bold hover:bg-[#7c3aed] transition shadow-lg shadow-purple-500/20"
+              className="bg-[#8b5cf6] text-white rounded-lg px-8 py-3.5 text-sm font-bold hover:bg-[#7c3aed] transition shadow-xl shadow-purple-500/20"
             >
-              Sign Up
+              Get Started Now
             </button>
             <button
               onClick={() => navigate('/login')}
-              className="bg-transparent text-white border border-white/20 rounded-full px-6 py-3 text-xs font-bold hover:bg-white/10 transition"
+              className="bg-transparent text-slate-500 border border-slate-200 rounded-lg px-8 py-3.5 text-sm font-bold hover:bg-slate-50 transition"
             >
-              Sign In
+              Try Demo
             </button>
           </div>
         </div>
       </section>
 
-      {/* ─── Footer with Mani Branding ─── */}
-      <footer className="bg-white border-t border-slate-100 py-16 text-slate-500 text-xs relative z-10">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-4 gap-8 mb-12 text-left">
+      {/* ─── Footer Section ─── */}
+      <footer className="bg-[#f8f9ff] pt-24 pb-12 text-slate-500 text-sm relative z-10 overflow-hidden">
+        
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 mb-20 text-left">
 
-          <div className="sm:col-span-1 space-y-3">
-            {/* Mani Logo inline SVG */}
-            <div className="flex items-center gap-2.5">
-              <svg className="w-8 h-8 text-[#8b5cf6]" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M6 4h4v10l12-10h5L16 15l12 13h-5L10 17v11H6V4z" />
-              </svg>
-              <span className="text-lg font-black text-slate-800 tracking-tight">Mani</span>
-            </div>
-            <p className="text-[10px] text-slate-400 font-semibold leading-relaxed">
-              We build tools that simplify shared expenses. Audit trails, anomalies detection, and zero-sum balance grids.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest">Platform</h4>
-            <ul className="space-y-2 font-medium">
-              <li><a href="#features" className="hover:text-slate-700">Features</a></li>
-              <li><a href="#why" className="hover:text-slate-700">Why Mani</a></li>
-              <li><a href="#metrics" className="hover:text-slate-700">Metrics</a></li>
+          <div className="col-span-1 space-y-6">
+            <h4 className="text-[13px] font-extrabold text-slate-900 uppercase tracking-widest">Features</h4>
+            <ul className="space-y-4 font-medium text-slate-500 text-xs">
+              <li><a href="#features" className="hover:text-[#8b5cf6] transition-colors">Features</a></li>
+              <li><a href="/dashboard" className="hover:text-[#8b5cf6] transition-colors">Dashboard</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Mobile App</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Pricing</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Updates</a></li>
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest">Company</h4>
-            <ul className="space-y-2 font-medium">
-              <li><a href="#about" className="hover:text-slate-700">About Us</a></li>
-              <li><a href="#testimonials" className="hover:text-slate-700">Testimonials</a></li>
-              <li><a href="#" className="hover:text-slate-700">Careers</a></li>
+          <div className="col-span-1 space-y-6">
+            <h4 className="text-[13px] font-extrabold text-slate-900 uppercase tracking-widest">Company</h4>
+            <ul className="space-y-4 font-medium text-slate-500 text-xs">
+              <li><a href="#about" className="hover:text-[#8b5cf6] transition-colors">About Us</a></li>
+              <li><a href="#contact" className="hover:text-[#8b5cf6] transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Career</a></li>
+              <li><a href="#blog" className="hover:text-[#8b5cf6] transition-colors">Blogs</a></li>
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest">Subscribe</h4>
-            <form onSubmit={handleSubmitWaitlist} className="flex gap-2">
+          <div className="col-span-1 space-y-6">
+            <h4 className="text-[13px] font-extrabold text-slate-900 uppercase tracking-widest">Resources</h4>
+            <ul className="space-y-4 font-medium text-slate-500 text-xs">
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Help Center</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">FAQs</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Guides</a></li>
+              <li><a href="#" className="hover:text-[#8b5cf6] transition-colors">Support</a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-2 space-y-6">
+            <h4 className="text-[13px] font-extrabold text-slate-900 uppercase tracking-widest">Subscribe Our Newsletter</h4>
+            <form onSubmit={handleSubmitWaitlist} className="relative max-w-sm">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 w-full focus:outline-none focus:ring-2 focus:ring-[#8b5cf6]/30 focus:border-[#8b5cf6] text-xs font-medium text-slate-800"
+                placeholder="Submit you email"
+                className="bg-white border border-slate-100 rounded-xl px-4 py-4 w-full focus:outline-none focus:ring-2 focus:ring-[#8b5cf6]/20 focus:border-[#8b5cf6] text-xs font-medium text-slate-800 shadow-sm"
               />
-              <button type="submit" className="bg-[#8b5cf6] text-white rounded-xl px-4 font-bold text-xs hover:bg-[#7c3aed] transition">
+              <button type="submit" className="absolute right-1 top-1 bottom-1 bg-[#8b5cf6] text-white rounded-lg px-6 font-bold text-xs hover:bg-[#7c3aed] transition shadow-md shadow-purple-500/20">
                 Subscribe
               </button>
             </form>
             {isSubmitted && (
-              <p className="text-[10px] text-emerald-600 font-semibold mt-1">
-                Thank you for subscribing!
+              <p className="text-[10px] text-emerald-600 font-bold mt-2 bg-emerald-50 px-3 py-1.5 rounded-lg inline-block">
+                Awesome! You're on the list.
               </p>
             )}
           </div>
 
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[10px] text-slate-400">© 2026 Mani Technologies Inc. All rights reserved.</p>
-          <div className="flex gap-6 font-semibold text-slate-400">
-            <a href="#" className="hover:text-slate-700">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-700">Terms of Service</a>
-            <a href="#" className="hover:text-slate-700">Cookie Settings</a>
+        {/* Global Bottom Bar */}
+        <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-slate-200/50 flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <div className="flex flex-wrap gap-6 font-bold text-[11px] text-slate-400 order-2 md:order-1">
+            <a href="#" className="hover:text-slate-900 transition-colors uppercase tracking-wider">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-900 transition-colors uppercase tracking-wider">Terms of Service</a>
+            <a href="#" className="hover:text-slate-900 transition-colors uppercase tracking-wider">Cookie Policy</a>
           </div>
+
+          <div className="text-center order-3 md:order-2">
+            <p className="text-[11px] text-slate-400 font-bold uppercase tracking-widest">
+              Website by Taqwah Agency © 2026 kodo finance management
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 order-1 md:order-3">
+             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8b5cf6] to-[#a78bfa] flex items-center justify-center shadow-lg shadow-purple-500/20 rotate-12">
+               <Layers className="w-6 h-6 text-white" />
+             </div>
+             <span className="text-4xl font-black text-slate-900 tracking-tighter">Simplified</span>
+          </div>
+
+        </div>
+
+      </footer>
         </div>
       </footer>
 
