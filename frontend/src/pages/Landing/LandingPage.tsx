@@ -28,9 +28,8 @@ export default function LandingPage() {
     <div className="bg-white text-slate-800 min-h-screen font-sans antialiased overflow-x-hidden selection:bg-[#8b5cf6] selection:text-white">
 
       {/* ─── Hero Spotlight Background ─── */}
-      <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-full max-w-7xl h-[800px] pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[25%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[75%] h-[60%] rounded-full bg-gradient-to-br from-[#d8b4fe]/50 via-[#c7d2fe]/30 to-transparent blur-[130px] opacity-80" />
-        <div className="absolute top-[35%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] h-[40%] rounded-full bg-gradient-to-tr from-[#a78bfa]/40 via-[#8b5cf6]/20 to-transparent blur-[100px] opacity-70" />
+      <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1000px] pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-[15%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[85%] h-[70%] rounded-full bg-gradient-to-br from-[#d8b4fe]/40 via-[#c7d2fe]/20 to-transparent blur-[140px] opacity-70" />
       </div>
 
       {/* ─── Header Navigation ─── */}
@@ -82,38 +81,37 @@ export default function LandingPage() {
       <section className="relative max-w-7xl mx-auto px-6 pt-12 pb-16 z-10 flex flex-col items-center text-center">
 
         {/* Giant Title "Simplified" */}
-        <h1 className="text-[100px] sm:text-[140px] font-black tracking-tighter text-[#1e1b4b] leading-[0.9] mb-2 select-none">
+        <h1 className="text-[120px] sm:text-[180px] font-black tracking-tighter text-[#1e1b4b] leading-[0.85] mb-2 select-none">
           Simplified
         </h1>
 
         {/* Slanted Pill "Download App" */}
-        <div className="bg-slate-950 text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-xl shadow-xl -rotate-2 hover:rotate-0 transition-all duration-500 mb-12 inline-block select-none cursor-pointer hover:scale-110" onClick={() => navigate('/register')}>
+        <div className="bg-slate-950 text-white text-[13px] font-bold uppercase tracking-[0.2em] px-10 py-4 rounded-xl shadow-2xl -rotate-2 hover:rotate-0 transition-all duration-500 mb-14 inline-block select-none cursor-pointer hover:scale-105" onClick={() => navigate('/register')}>
           Download App
         </div>
 
         {/* Hero Central Graphic & Floating Side Text */}
-        <div className="relative w-full max-w-6xl h-[500px] sm:h-[650px] flex items-center justify-center mt-2">
+        <div className="relative w-full max-w-6xl h-[550px] sm:h-[750px] flex items-center justify-center -mt-4">
 
           {/* Floating Text Left */}
-          <div className="hidden lg:block absolute left-[2%] top-[10%] max-w-[240px] text-left">
-            <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
+          <div className="hidden lg:block absolute left-[0%] top-[12%] max-w-[280px] text-left">
+            <p className="text-[14px] text-slate-500 leading-relaxed font-medium">
               This streamlined approach provides an immediate, high-level view of your spending patterns, allowing you to identify trends and adjust your habits in real time.
             </p>
           </div>
 
-          {/* Central smartphone mockup illustration */}
-          <div className="relative z-10 w-[300px] sm:w-[420px] aspect-[1/2] select-none transform hover:scale-[1.02] transition-transform duration-700 cursor-default">
-            {/* Using the existing phone mockup but we'll try to position it like the hand-held phone */}
+          {/* Central smartphone mockup illustration with handheld hand */}
+          <div className="relative z-10 w-[400px] sm:w-[600px] lg:w-[850px] select-none transform hover:scale-[1.01] transition-transform duration-1000 cursor-default">
             <img
-              src="/simplified_hero_phone.png"
+              src="/hero-mockup.png"
               alt="Simplified Phone Application"
-              className="w-full h-full object-contain drop-shadow-[0_45px_65px_rgba(139,92,246,0.3)]"
+              className="w-full h-auto object-contain drop-shadow-[0_60px_100px_rgba(0,0,0,0.12)]"
             />
           </div>
 
           {/* Floating Text Right */}
-          <div className="hidden lg:block absolute right-[2%] top-[10%] max-w-[240px] text-right">
-            <p className="text-[13px] text-slate-500 leading-relaxed font-medium">
+          <div className="hidden lg:block absolute right-[0%] top-[12%] max-w-[280px] text-right">
+            <p className="text-[14px] text-slate-500 leading-relaxed font-medium">
               You gain the total focus needed to prioritize your long term financial goals and make informed decisions with absolute confidence.
             </p>
           </div>
