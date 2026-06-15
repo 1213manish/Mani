@@ -2,6 +2,7 @@ services:
   - type: web
     name: mani-backend
     env: python
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: python manage.py migrate && gunicorn config.wsgi:application
     envVars:
